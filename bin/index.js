@@ -4,15 +4,18 @@
  * return js object that parsed from markdown files in src folder
  */
 const fs = require('fs')
-const parser = require('./parser')
+const parser = require('../parser')
 const argv = require('minimist')(process.argv.slice(2))
 const path = require('path')
 
 /**
  * argv options: {s: src, o: output, t: file type[blog, doc, api]}
  */
-const OUTPUT_PATH = `${__dirname}/${argv.o}` || `${__dirname}/output`
-const INPUT_PATH = `${__dirname}/${argv.s}` || `${__dirname}/src`
+const OUTPUT_PATH = `${process.cwd()}/${argv.o}` || `${__dirname}/output`
+const INPUT_PATH = `${process.cwd()}/${argv.s}` || `${__dirname}/src`
+// const OUTPUT_PATH = `${argv.o}` || `${__dirname}/output`
+// const INPUT_PATH = `${argv.s}` || `${__dirname}/src`
+
 const TYPE = argv.t || 'doc'
 const GITHUB_PREFIX = 'http://xxx'
 const PROJ_ROOT = process.cwd()

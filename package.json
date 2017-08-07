@@ -6,7 +6,7 @@
   "directories": {
   },
   "bin": {
-    "owl-parser": "./index.js"
+    "owl-parser": "./bin/index.js"
   },  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
